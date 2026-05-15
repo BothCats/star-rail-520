@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071223">
+  <meta name="description" content="蜡烛先生与芒果女士 · 1号线星轨，从五棵松出发的30天。">
+  <meta property="og:title" content="蜡烛先生与芒果女士 · 1号线星轨">
+  <meta property="og:description" content="从五棵松出发的30天。">
+  <meta property="og:image" content="photos/s05_first_photo.webp">
+  <title>蜡烛先生与芒果女士 · 1号线星轨</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
+  <main>
+    <section class="screen hero" id="top" data-nav-title="星轨站">
+      <div class="hero-rail" aria-hidden="true">
+        <span class="planet planet-candle" data-secret="candle">
+          <span class="candle-icon"><i></i></span>
+        </span>
+        <span class="planet planet-mango">
+          <span class="mango-icon"></span>
+        </span>
+      </div>
+      <div class="station-sign">
+        <p>「星轨站」</p>
+        <span>STAR TRACK STATION</span>
+      </div>
+      <h1>蜡烛先生与芒果女士 · 1号线星轨</h1>
+      <p class="hero-subtitle">2026.4.14 - 一列开往星辰的列车</p>
+      <p class="hero-line">从五棵松上车，沿着1号线，开往520。</p>
+      <a class="board-button" href="#route" aria-label="上车，进入星轨路线图">上车</a>
+    </section>
+
+    <section class="screen route" id="route" data-nav-title="路线图">
+      <p class="eyebrow">STAR RAIL MAP</p>
+      <h2>星轨路线图</h2>
+      <div class="route-dashboard">
+        <div class="route-beam" aria-hidden="true"></div>
+        <div class="route-map" aria-label="八宝山、玉泉路、五棵松、南礼士路组成的星轨路线">
+          <div class="route-line"></div>
+          <article class="route-stop">
+            <span></span>
+            <strong>八宝山</strong>
+            <small>蜡烛先生的小舍</small>
+          </article>
+          <article class="route-stop active">
+            <span></span>
+            <strong>玉泉路</strong>
+            <small>芒果女士的校园</small>
+          </article>
+          <article class="route-stop origin">
+            <span></span>
+            <strong>五棵松</strong>
+            <small>第一次见面</small>
+          </article>
+          <article class="route-stop">
+            <span></span>
+            <strong>南礼士路</strong>
+            <small>工作的方向</small>
+          </article>
+        </div>
+        <div class="route-facts">
+          <article><strong>2站</strong><span>很近很近的距离</span></article>
+          <article><strong>1号线</strong><span>每天都路过的缘分</span></article>
+          <article><strong>B口</strong><span>第一次见面的坐标</span></article>
+        </div>
+      </div>
+      <p class="route-note">轨道距离：仅 2 站 · 缘分密度：无限</p>
+    </section>
+
+    <section class="screen invite" id="invite" data-nav-title="邀约">
+      <div class="invite-shell">
+        <div class="phone-chat" aria-label="第一次正式邀约的聊天窗口">
+          <div class="chat-header">
+            <span>4月14日 · 五棵松前夜</span>
+            <strong>第一次正式邀约</strong>
+          </div>
+          <div class="message-row incoming">
+            <span class="avatar">秋</span>
+            <p>你好呀，今晚要一起吃个晚饭嘛！</p>
+          </div>
+          <div class="message-time">16:15 · 来自芒果女士</div>
+          <div class="message-row outgoing">
+            <p>要！我提前下班了，回家洗下脸！</p>
+            <span class="avatar">晗</span>
+          </div>
+          <div class="meet-ticket">
+            <span>MEET TICKET</span>
+            <strong>17:40 · 五棵松地铁站 B 口</strong>
+            <small>一顿晚饭，把两颗星接进同一条轨道。</small>
+          </div>
+        </div>
+        <div class="invite-side" aria-hidden="true">
+          <span class="mini-planet candle"><i></i></span>
+          <span class="mini-line"></span>
+          <span class="mini-planet mango"></span>
+        </div>
+      </div>
+    </section>
+
+    <div id="stationList"></div>
+
+    <section class="screen nickname" id="names" data-nav-title="外号星">
+      <p class="eyebrow">NICKNAME STARS</p>
+      <h2>外号星</h2>
+      <p class="section-copy">这些名字不是标签，是我们一点点靠近后长出来的小星星。</p>
+      <div class="nickname-grid">
+        <article class="person-star mango-card">
+          <img src="photos/s06_mango.webp" alt="芒果女士的照片" loading="lazy">
+          <div>
+            <h3>芒果女士</h3>
+            <div class="name-stars" id="herNames"></div>
+          </div>
+        </article>
+        <article class="person-star candle-card">
+          <img src="photos/s06_candle.webp" alt="蜡烛先生的照片" loading="lazy">
+          <div>
+            <h3>蜡烛先生</h3>
+            <div class="name-stars" id="hisNames"></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="screen almanac" id="numbers" data-nav-title="我们的数字">
+      <p class="eyebrow">OBSERVATION LOG</p>
+      <h2>我们的数字</h2>
+      <div class="number-grid">
+        <article><span>微信相遇</span><strong>4.11 · 23:32</strong></article>
+        <article><span>正式发车</span><strong>4.14 · 17:40</strong></article>
+        <article><span>星际距离</span><strong>仅 2 站</strong></article>
+        <article><span>最长信号</span><strong>2h 8m 16s</strong></article>
+        <article><span>轨道交汇</span><strong>20+ 次共餐</strong></article>
+        <article><span>联合观测</span><strong>3 部电影</strong></article>
+        <article><span>共同兴趣</span><strong>运动 · 美食 · 旅游 · 逛街 · ...</strong></article>
+        <article><span>第一束花</span><strong>白色雏菊</strong></article>
+        <article><span>满月礼物</span><strong>天蓝钢笔</strong></article>
+      </div>
+    </section>
+
+    <section class="screen terminal" id="terminal" data-nav-title="520">
+      <p class="eyebrow">TERMINAL 520</p>
+      <h2>终点站 · 520</h2>
+      <div class="countdown" id="countdown" aria-live="polite"></div>
+      <div class="heart-field" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <button class="letter-button" id="openLetter" type="button">打开 520 信封</button>
+      <article class="letter" id="letter">
+        <h3>写给芒果女士</h3>
+        <p>从五棵松第一次见面开始，很多普通的日子都变成了只有我们才知道的故事。</p>
+        <p>我喜欢和你一起吃饭、走路、打电话、玩很幼稚也很快乐的游戏，也喜欢我们认真解决问题时的样子。</p>
+        <p>“我们的目标要解决世界，而不是解决对方。”</p>
+        <p>列车将继续前行，下一站，每一天。</p>
+        <footer>蜡烛先生 & 芒果女士 · 2026.5.20</footer>
+      </article>
+    </section>
+  </main>
+
+  <aside class="station-badge" id="stationBadge" aria-live="polite">
+    <small>当前停靠</small>
+    <strong>星轨站</strong>
+  </aside>
+
+  <nav class="rail-nav" id="railNav" aria-label="星轨页面导航"></nav>
+
+  <button class="memory-orb" id="memoryOrb" type="button" aria-label="随机打开一个日常小梗">
+    <span>日常</span>
+  </button>
+  <article class="memory-toast" id="memoryToast" aria-live="polite"></article>
+
+  <button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+  <dialog class="photo-dialog" id="photoDialog">
+    <button type="button" id="closeDialog" aria-label="关闭照片">×</button>
+    <img id="dialogImage" alt="">
+    <p id="dialogCaption"></p>
+  </dialog>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
